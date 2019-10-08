@@ -1,0 +1,150 @@
+/*A good color: #5c0627
+*/
+.h1 {
+  font-size: 100px;
+  color: white;
+  background-image: linear-gradient(to bottom right, #0d002b, #1a003b);
+  height: 165px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-right: 150px;
+  padding-left: 20px;
+  padding-top: 30px;
+}
+
+.login {
+  margin-right: 15%;
+  text-align: right;
+  font-size: 20px;
+}
+.login .small {
+  font-size: 19px;
+}
+
+.btn {
+  font-size: 20px;
+  background-color: #1a003b;
+  color: white;
+  width: 100px;
+}
+
+.btn:focus {
+  background-color: #27005ad8;
+  color: white;
+}
+
+.btn:hover {
+  background-color: #0d002b;
+  color: white;
+}
+
+.centered {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.large-text {
+  font-size: 120px;
+  color: #1a003b;
+}
+
+.medium-text {
+  font-size: 30px;
+  color: #1a003b;
+}
+
+.small-text {
+  font-size: 20px;
+  color: #1a003b;
+}
+
+.search {
+  width: 70%;
+  height: 50px;
+  font-size: 30px;
+}
+
+.logged_in {
+  position: absolute;
+  right: 10px;
+  top: 18px;
+  text-align: right;
+  color: white;
+  font-size: 23px;
+}
+.logged_in button {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.13);
+  border: 0px;
+}
+
+.star {
+  width: 30px;
+  height: 30px;
+}
+
+.list-item {
+  background-color: #1a003b;
+  width: 10px;
+}
+
+.col-container {
+  display: table;
+  width: 100%;
+}
+
+.col {
+  display: table-cell;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.rating-select {
+  font-size: 20px;
+}
+
+.navigation {
+  text-align: center;
+  margin: 0px;
+  background-image: linear-gradient(to top right, #0d002b, #1a003b);
+}
+.navigation .btn {
+  margin: 0px;
+  font-size: 15px;
+  width: 49%;
+  background-color: #ffffff00;
+}
+.navigation .btn:hover {
+  background-color: #ffffff10;
+}
+
+@media (max-width: 1200px) {
+  .h1 {
+    font-size: 80px;
+    padding-top: 50px;
+  }
+
+  .login {
+    margin-bottom: 50px;
+    margin-right: 15%;
+  }
+}
+@media (max-width: 1000px) {
+  .h1 {
+    font-size: 60px;
+    padding-top: 70px;
+  }
+}
+@media (max-width: 800px) {
+  .h1 {
+    font-size: 40px;
+    padding-top: 50pxpx;
+  }
+}
+@media (max-width: 650px) {
+  .login {
+    margin-right: 5%;
+  }
+}
+
+/*# sourceMappingURL=mainStyle.css.map */

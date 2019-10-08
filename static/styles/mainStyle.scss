@@ -1,0 +1,159 @@
+$textColorLight: white;
+$backgroundDark: #0d002b;
+$backgroundLight: #1a003b;
+$backgroundLighter: #27005ad8;
+/*A good color: #5c0627
+*/
+
+.h1{
+    font-size:100px;
+    color:$textColorLight;
+    background-image: linear-gradient(to bottom right, $backgroundDark, $backgroundLight);
+    height: 165px;
+    margin-top:0px;
+    margin-bottom: 0px;
+
+    padding-right: 150px;
+    padding-left:20px;
+    padding-top:30px;
+
+}
+
+
+
+.login{
+    margin-right: 15%;
+    text-align: right;
+    font-size: 20px;
+    .small{
+        font-size:19px;
+    }
+}
+
+.btn{
+    font-size: 20px;
+    background-color: $backgroundLight;
+    color: $textColorLight;
+    width: 100px;
+}
+
+.btn:focus{
+    background-color: $backgroundLighter;
+    color: $textColorLight;
+}
+.btn:hover{
+    background-color: $backgroundDark;
+    color: white;
+}
+
+.centered{    
+    margin-top:100px;
+    text-align: center;    
+}
+
+.large-text{
+    font-size: 120px;
+    color: $backgroundLight;
+}
+.medium-text{
+    font-size: 30px;
+    color: $backgroundLight;
+}
+.small-text{
+    font-size:20px;
+    color: $backgroundLight;
+}
+
+.search{
+    width: 70%;
+    height: 50px;
+    font-size: 30px;
+}
+
+.logged_in{
+    position: absolute;
+    right:10px;
+    top:18px;
+    text-align: right;
+    color: $textColorLight;
+    font-size: 23px;
+    button{
+        color:$textColorLight;
+        background-color: hsla(0, 0%, 100%, 0.13);
+        border: 0px;
+    }
+}
+
+.star{
+    width: 30px;
+    height: 30px;
+}
+
+.list-item{
+    background-color: $backgroundLight;    
+    width:10px;
+}
+
+.col-container{
+    display:table;
+    width:100%;
+}
+
+.col{
+    display: table-cell;
+    padding-right:5px;
+    padding-left: 5px;
+}
+
+.rating-select{
+    font-size: 20px;
+}
+
+.navigation{
+    text-align: center;
+    margin:0px;
+    background-image: linear-gradient(to top right, $backgroundDark, $backgroundLight);
+    .btn{
+        margin: 0px;
+        font-size: 15px;
+        width: 49%;
+        background-color: #ffffff00;
+    }
+    .btn:hover{
+        background-color: #ffffff10;
+    }    
+}
+
+
+@media (max-width:1200px){
+    .h1{
+        font-size:80px;
+        padding-top: 50px;
+    }
+
+    .login{
+        margin-bottom: 50px;
+        margin-right:15%;
+        
+    }
+}
+
+@media (max-width:1000px){
+    .h1{
+        font-size:60px;
+        padding-top: 70px;;
+    }
+}
+@media (max-width: 800px){
+    .h1{
+        font-size: 40px;
+        padding-top: 50pxpx;
+    }
+}
+
+@media (max-width:650px){
+    .login{
+        margin-right: 5%;
+    }
+    
+}

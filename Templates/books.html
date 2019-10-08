@@ -1,0 +1,32 @@
+{%extends "layout.html" %}
+
+{% block title %}
+    Books
+{% endblock %}
+
+
+{%block body %}
+    <div class="centered">
+        <span class="large-text">
+            Search
+        </span>   
+        <span>
+            <form action="{{ url_for('search') }}" method="GET" class="form-group">
+                <input class="search" type="text" name="search">
+                <br>
+                <span class="medium-text">Search by </span> <br>
+
+                <span class="small-text">                    
+                    <input type="radio" name="criteria" value="isbn"> isbn &emsp;
+                    <input type="radio" name="criteria" value="title" checked="checked"> title &emsp;
+                    <input type="radio" name="criteria" value="author"> author 
+                    <br>
+                </span>
+                <br>
+                <button class="btn">Find</button>
+                <br>
+            </form>
+        </span>
+    </div>
+
+{% endblock %}

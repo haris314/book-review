@@ -1,0 +1,11 @@
+{% extends "message_layout.html" %}
+
+
+{% block message %}
+    <span class="label label-success">Successfully Registered</span>
+{% endblock %}
+
+{% block return %}
+    Please click <a href="{{ url_for('home') }}">here</a> to go to the home page and log in
+{% endblock %}
+
