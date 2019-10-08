@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    search
+{% endblock %}
+
+
+{% block body %}
+    <h1 class="medium-text">Results for "{{search}}" in {{criteria}}s</h1>
+    <table class="table table-hover " style="text-align:center;">
+        <tr>
+            <th style="text-align:center;">Title</th>
+            <th style="text-align:center;">Author</th>
+            <th style="text-align:center;">Year</th>
+            <th style="text-align:center;">ISBN</th>
+        </tr>
+            {% for book in result %}
+                <tr>
+                    <td><a href="{{url_for('book_details',isbn=book.isbn)}}" class="small-text">{{book.title}}</a></td>
+                    <td>{{book.author}}</td>
+                    <td>{{book.year}}</td>
+                    <td>{{book.isbn}}</td>
+                </tr>
+            {% endfor %}
+        
+    </table>
+{% endblock %}

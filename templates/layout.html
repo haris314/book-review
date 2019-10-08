@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %} {% endblock %}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/mainStyle.css') }}">
+    </head>
+    
+
+    <body>
+        <div class="h1">
+            Book review Website
+        </div>
+
+        <div class="navigation">            
+            <a href="{{ url_for('home') }}"><button class="btn">Home</button></a>
+            <a href="{{ url_for('login') }}"><button class="btn">Search</button></a>            
+        </div>
+
+        {% if session["login"] == True %}
+            <div class="logged_in">
+                Logged in as<br>
+                <b>{{session["username"]}}</b> <br>
+                <a href="{{ url_for('logout') }}"><button>Log out</button></a>
+            </div>
+        {% endif %}
+
+        {% block body %} 
+        {% endblock %}
+        
+        <!-- The section to be displayed on the bottom of the page -->
+        <div style="margin:10%; text-align:center;">
+                <hr>
+                This website is not meant to be used for any meaningful purpose and is just made for gaining experience.
+                The website is a project which the students are supposed to work on
+                for the course CS50: Web development with python and javascript as taught in 2018 by Harvard.
+        </div>
+        
+        
+    
+
+        
+    </body>
+</html>

@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+   
+    {% block title %}
+        Home
+    {% endblock %}
+           
+    
+    {% block body %}
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-sm-12 ">
+                    <form class="login" action="{{ url_for('login') }}" method="POST">
+                        <h1>Login</h1>
+                        <h4>As an existing user</h4><hr><br>
+                        Username: 
+                        <input type="text" name="username">
+                        <br><br>
+                        Password: 
+                        <input type="password" name="password">
+                        <br> <br>
+                        <button class="btn">Log in</button>
+                    </form>
+                </div>
+                <div class="col-lg-6 col-sm-12" >
+                    <form class="login" action="{{ url_for('register') }}" method="POST">
+                        <h1>Register</h1>
+                        <h4>As a new user</h4><hr><br>
+                        Username: 
+                        <input type="text" name="username">
+                        <br><br>
+                        Password: 
+                        <input type="password" name="password">
+                        <br> <br>
+                        <span class="small">Confirm password: </span>
+                        <input type="password" name="confirm_password">
+                        <br> <br>
+
+                        <button class="btn">Sign up</button>
+                    </form>
+                    
+                </div>
+
+            </div>
+        </div>
+        
+    {% endblock %}
+
