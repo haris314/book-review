@@ -1,15 +1,31 @@
+
+
+/*Old colors
 $textColorLight: white;
 $backgroundDark: #0d002b;
 $backgroundLight: #1a003b;
 $backgroundLighter: #27005ad8;
+*/
+
+/*New colors*/
+$textColorLight: white;
+$backgroundDark: #a34c8d;;
+$backgroundLight: #396e8d;
+$backgroundLighter: #7a3a6a;
+
 /*A good color: #5c0627
 */
+
+::selection{
+    background-color: rgba(136, 135, 135, 0.226);
+    color: black;
+}
 
 .h1{
     font-size:100px;
     color:$textColorLight;
     background-image: linear-gradient(to bottom right, $backgroundDark, $backgroundLight);
-    height: 165px;
+    height: 205px;
     margin-top:0px;
     margin-bottom: 0px;
 
@@ -70,7 +86,7 @@ $backgroundLighter: #27005ad8;
     font-size: 30px;
 }
 
-.logged_in{
+/*.logged_in{
     position: absolute;
     right:10px;
     top:18px;
@@ -83,13 +99,68 @@ $backgroundLighter: #27005ad8;
         border: 0px;
     }
 }
+*/
+/* Dropdown Button */
+.dropbtn {
+  background-color: rgba(143, 143, 143, 0.274);
+  height: 40px;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: absolute;
+  top: 165px;
+  right: 0px;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0px;
+  background-color: $backgroundLight;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content {
+    .dropdown-item{
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: rgba(129, 129, 129, 0.582);}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: rgba(255, 255, 255, 0.555)}
+
 
 .star{
     width: 30px;
     height: 30px;
 }
 
-.rating-label{
+.radio-label{
     margin-left: 5px;
     [type=radio] { 
         position: absolute;
@@ -107,6 +178,27 @@ $backgroundLighter: #27005ad8;
     [type=radio]:checked + img {
         height: 50px;
         box-shadow: -5px 0px 0px 0px $backgroundLight;
+    }
+
+    .btn{
+        font-size: 15px;
+        width: 80px;
+        margin-left:-5px;
+        margin-right:-5px;
+        background-color: rgba(131, 131, 131, 0);
+        color: black;
+        border-left: rgba(124, 124, 124, 0.384) solid 1px;
+        border-right: rgba(124, 124, 124, 0.384) solid 1px;
+    }
+    .btn:hover{
+        background-color: #9b9b9b5e;
+    }
+    [type=radio] + .btn {
+        cursor: pointer;
+     }
+    [type=radio]:checked + .btn{
+        background-color: $backgroundDark;
+        color: white;
     }
 }
 
@@ -137,9 +229,13 @@ $backgroundLighter: #27005ad8;
 .navigation{
     text-align: center;
     margin:0px;
-    background-image: linear-gradient(to top right, $backgroundDark, $backgroundLight);
+    margin-top: -40px;
+    margin-right:30px;
+    //background-image: linear-gradient(to top right, $backgroundDark, $backgroundLight);
+    background-color: #ffffff00;
     .btn{
         margin: 0px;
+
         font-size: 15px;
         width: 32%;
         background-color: #ffffff00;

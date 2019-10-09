@@ -1,10 +1,22 @@
+/*Old colors
+$textColorLight: white;
+$backgroundDark: #0d002b;
+$backgroundLight: #1a003b;
+$backgroundLighter: #27005ad8;
+*/
+/*New colors*/
 /*A good color: #5c0627
 */
+::selection {
+  background-color: rgba(136, 135, 135, 0.226);
+  color: black;
+}
+
 .h1 {
   font-size: 100px;
   color: white;
-  background-image: linear-gradient(to bottom right, #0d002b, #1a003b);
-  height: 165px;
+  background-image: linear-gradient(to bottom right, #a34c8d, #396e8d);
+  height: 205px;
   margin-top: 0px;
   margin-bottom: 0px;
   padding-right: 150px;
@@ -23,18 +35,18 @@
 
 .btn {
   font-size: 20px;
-  background-color: #1a003b;
+  background-color: #396e8d;
   color: white;
   width: 100px;
 }
 
 .btn:focus {
-  background-color: #27005ad8;
+  background-color: #7a3a6a;
   color: white;
 }
 
 .btn:hover {
-  background-color: #0d002b;
+  background-color: #a34c8d;
   color: white;
 }
 
@@ -45,17 +57,17 @@
 
 .large-text {
   font-size: 120px;
-  color: #1a003b;
+  color: #396e8d;
 }
 
 .medium-text {
   font-size: 30px;
-  color: #1a003b;
+  color: #396e8d;
 }
 
 .small-text {
   font-size: 20px;
-  color: #1a003b;
+  color: #396e8d;
 }
 
 .search {
@@ -64,18 +76,77 @@
   font-size: 30px;
 }
 
-.logged_in {
-  position: absolute;
-  right: 10px;
-  top: 18px;
-  text-align: right;
-  color: white;
-  font-size: 23px;
+/*.logged_in{
+    position: absolute;
+    right:10px;
+    top:18px;
+    text-align: right;
+    color: $textColorLight;
+    font-size: 23px;
+    button{
+        color:$textColorLight;
+        background-color: hsla(0, 0%, 100%, 0.13);
+        border: 0px;
+    }
 }
-.logged_in button {
+*/
+/* Dropdown Button */
+.dropbtn {
+  background-color: rgba(143, 143, 143, 0.274);
+  height: 40px;
   color: white;
-  background-color: rgba(255, 255, 255, 0.13);
-  border: 0px;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: absolute;
+  top: 165px;
+  right: 0px;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0px;
+  background-color: #396e8d;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content .dropdown-item {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: rgba(129, 129, 129, 0.582);
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: rgba(255, 255, 255, 0.555);
 }
 
 .star {
@@ -83,27 +154,47 @@
   height: 30px;
 }
 
-.rating-label {
+.radio-label {
   margin-left: 5px;
   /* IMAGE STYLES */
   /* CHECKED STYLES */
 }
-.rating-label [type=radio] {
+.radio-label [type=radio] {
   position: absolute;
   opacity: 0;
   width: 0;
   height: 0;
 }
-.rating-label [type=radio] + img {
+.radio-label [type=radio] + img {
   cursor: pointer;
 }
-.rating-label [type=radio]:checked + img {
+.radio-label [type=radio]:checked + img {
   height: 50px;
-  box-shadow: -5px 0px 0px 0px #1a003b;
+  box-shadow: -5px 0px 0px 0px #396e8d;
+}
+.radio-label .btn {
+  font-size: 15px;
+  width: 80px;
+  margin-left: -5px;
+  margin-right: -5px;
+  background-color: rgba(131, 131, 131, 0);
+  color: black;
+  border-left: rgba(124, 124, 124, 0.384) solid 1px;
+  border-right: rgba(124, 124, 124, 0.384) solid 1px;
+}
+.radio-label .btn:hover {
+  background-color: #9b9b9b5e;
+}
+.radio-label [type=radio] + .btn {
+  cursor: pointer;
+}
+.radio-label [type=radio]:checked + .btn {
+  background-color: #a34c8d;
+  color: white;
 }
 
 .list-item {
-  background-color: #1a003b;
+  background-color: #396e8d;
   width: 10px;
 }
 
@@ -125,7 +216,9 @@
 .navigation {
   text-align: center;
   margin: 0px;
-  background-image: linear-gradient(to top right, #0d002b, #1a003b);
+  margin-top: -40px;
+  margin-right: 30px;
+  background-color: #ffffff00;
 }
 .navigation .btn {
   margin: 0px;

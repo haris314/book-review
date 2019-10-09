@@ -17,9 +17,21 @@
                 <span class="medium-text">Search by </span> <br>
 
                 <span class="small-text">                    
-                    <input type="radio" name="criteria" value="isbn"> isbn &emsp;
-                    <input type="radio" name="criteria" value="title" checked="checked"> title &emsp;
-                    <input type="radio" name="criteria" value="author"> author 
+
+                    <label class="radio-label">
+                        <input name="criteria" type="radio" value="title" checked="checked" class="rating-radio">
+                        <div class="btn" type="button" disabled>Title</div>
+                    </label>
+
+                    <label class="radio-label">
+                        <input name="criteria" type="radio" value="author" class="rating-radio">
+                        <div class="btn" type="button" disabled>Author</div>
+                    </label>
+
+                    <label class="radio-label">
+                        <input name="criteria" type="radio" value="isbn" class="rating-radio">
+                        <div class="btn" type="button" disabled>isbn</div>
+                    </label>
                     <br>
                 </span>
                 <br>

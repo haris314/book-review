@@ -21,10 +21,17 @@
 
         <!--Diplay user information if the user is logged in-->
         {% if session["login"] == True %}
-            <div class="logged_in">
-                Logged in as<br>
-                <b>{{session["username"]}}</b> <br>
-                <a href="{{ url_for('logout') }}"><button>Log out</button></a>
+            <div class="dropdown">
+                <button class="dropbtn">
+                    
+                    <span class="caret"></span>
+                </button>
+                <div class="dropdown-content" >
+                    <span class="dropdown-item">Logged in</span>
+                    <span class="dropdown-item"><b>{{session["username"]}}</b></span>
+                    <br>
+                    <a href="{{ url_for('logout') }}">Log out</a>
+                </div>
             </div>
         {% endif %}
 
