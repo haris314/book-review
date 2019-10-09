@@ -85,16 +85,36 @@
                         <textarea class="form-control" name="review_given" rows="10" style="margin-bottom:20px; resize:none;" placeholder="Write your review here"></textarea>
                         <span style="font-size:20px;">Select a rating </span>
                         
-                        <select name="rating" class="rating-select">
-                            <option value="1">1 star</option>
-                            <option value="2">2 star</option>
-                            <option value="3">3 star</option>
-                            <option value="4">4 star</option>
-                            <option value="5">5 star</option>
-                        </select>
+                        <!--Rating interface-->
+                        <br>
+                        <label class="rating-label">
+                            <input name="rating" type="radio" value="1" checked="checked" class="rating-radio">
+                            <img src="\static\1_star.png" height="30px"> 
+                        </label><br>
 
-                        <br><br>
+                        <label class="rating-label">
+                            <input name="rating" type="radio" value="2">
+                            <img src="\static\2_star.png" height="30px"> 
+                        </label><br>
+                                                
+                        <label class="rating-label">
+                            <input name="rating" type="radio" value="3">
+                            <img src="\static\3_star.png" height="30px"> 
+                        </label><br>
+                                                
+                        <label class="rating-label">
+                            <input name="rating" type="radio" value="4">
+                            <img src="\static\4_star.png" height="30px"> 
+                        </label><br>
+                                                
+                        <label class="rating-label">
+                            <input name="rating" type="radio" value="5">
+                            <img src="\static\5_star.png" height="30px" style="cursor: pointer;"> 
+                        </label><br>
+                                                                                            
+                        <br>    
                         <button class="btn">Submit</button>
+
                     </form>
             </div>
 
