@@ -83,6 +83,25 @@
   height: 30px;
 }
 
+.rating-label {
+  margin-left: 5px;
+  /* IMAGE STYLES */
+  /* CHECKED STYLES */
+}
+.rating-label [type=radio] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.rating-label [type=radio] + img {
+  cursor: pointer;
+}
+.rating-label [type=radio]:checked + img {
+  height: 50px;
+  box-shadow: -5px 0px 0px 0px #1a003b;
+}
+
 .list-item {
   background-color: #1a003b;
   width: 10px;
