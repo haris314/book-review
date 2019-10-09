@@ -141,12 +141,17 @@ $backgroundLighter: #27005ad8;
     .btn{
         margin: 0px;
         font-size: 15px;
-        width: 49%;
+        width: 32%;
         background-color: #ffffff00;
     }
     .btn:hover{
         background-color: #ffffff10;
     }    
+}
+
+//Style for a normal page. Like the api documentation page
+.normal-page{
+    margin:10%;
 }
 
 

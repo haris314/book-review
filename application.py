@@ -217,3 +217,47 @@ def book_details(isbn):
         gr_half_star = True
     
     return render_template("book_details.html", book=book, reviews=reviews, avg_rating=avg_rating, full_stars=full_stars, half_star=half_star, count=count, gr_avg_rating=gr_avg_rating, gr_full_stars=gr_full_stars, gr_half_star=gr_half_star, gr_count=gr_count)
+
+
+#API calls to the website 
+@app.route("/api/<string:isbn>")
+def api(isbn):
+
+    #get details about the book
+    book = db.execute("SELECT * FROM book WHERE isbn=:isbn", {"isbn": isbn}).fetchone()
+
+    #if no book exists, return 404
+    if book is None:
+        return jsonify({"isbn": "_INVALID"}), 404
+
+    #Get all reviews of the book and get number of reviews from it
+    reviews = db.execute("SELECT * FROM review WHERE isbn=:isbn", {"isbn": isbn})
+    row_count = reviews.rowcount
+    reviews = reviews.fetchall()
+
+    #calculating average rating. Really need a function for this
+    avg_rating = 0
+    for review in reviews:
+        avg_rating += review.rating
+    if row_count != 0:
+        avg_rating /= row_count
+    avg_rating = round(avg_rating, 2)
+
+    #Prepare the response ready to be jsonified
+    response = {
+        "title": book.title,
+        "author": book.author,
+        "year": book.year,
+        "isbn": isbn,
+        "review_count": row_count,
+        "average_score": avg_rating
+    }
+
+    #Give em the stuff
+    return jsonify(response)
+
+
+#API documentation page
+@app.route("/api_documentation", methods=["GET"])
+def api_documentation():
+    return render_template("api_documentation.html")

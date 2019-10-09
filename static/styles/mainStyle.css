@@ -130,11 +130,15 @@
 .navigation .btn {
   margin: 0px;
   font-size: 15px;
-  width: 49%;
+  width: 32%;
   background-color: #ffffff00;
 }
 .navigation .btn:hover {
   background-color: #ffffff10;
+}
+
+.normal-page {
+  margin: 10%;
 }
 
 @media (max-width: 1200px) {

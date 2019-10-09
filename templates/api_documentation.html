@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}API Documentation {% endblock %}
+
+
+
+{% block body %}
+
+    <div class="normal-page">
+        <div class="medium-text">API documentation</div>
+        <hr>
+        There is only one kind of API request supported. You can make this request to get a book's title, author, 
+        year, average rating on this website and the review count by providing the isbn of the book in a GET request.
+        <br>
+        The format of your request should be as follows:
+        <br>
+        <pre><span style="color:rgba(90, 87, 87, 0.767)">             https://book-review-haris314.herokuapp.com/api/&ltisbn&gt</span></pre>
+        The response to the request will be as folows:
+        
+        <pre>
+            {
+                "author": "Jennifer Niven", 
+                "average_score": 2.83, 
+                "isbn": "0385755929", 
+                "review_count": 6, 
+                "title": "Holding Up the Universe", 
+                "year": 2016
+            }
+        </pre>
+        if the isbn given is 0385755929, for instance.
+        <br>
+        For a wrong isbn, or an isbn which does not exist in the database of the website,
+        the response will be as follows together with the error code 404.
+        <br>
+        <pre>
+            {
+                "isbn": "_INVALID"
+            }
+        </pre>
+    </div>
+    
+
+{% endblock %}
