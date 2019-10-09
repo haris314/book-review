@@ -18,6 +18,7 @@
             <a href="{{ url_for('login') }}"><button class="btn">Search</button></a>            
         </div>
 
+        <!--Diplay user information if the user is logged in-->
         {% if session["login"] == True %}
             <div class="logged_in">
                 Logged in as<br>
@@ -35,6 +36,9 @@
                 This website is not meant to be used for any meaningful purpose and is just made for gaining experience.
                 The website is a project which the students are supposed to work on
                 for the course CS50: Web development with python and javascript as taught in 2018 by Harvard.
+                <br><br>
+                © Mohd Haris                
+                <span style="font-size: 8px;"><br>Just wrote all this to make the website look cooler</span>
         </div>
         
         

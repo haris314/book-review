@@ -163,6 +163,7 @@ $backgroundLighter: #27005ad8;
     }
 }
 
+//Manage the title
 @media (max-width:1000px){
     .h1{
         font-size:60px;
@@ -172,9 +173,10 @@ $backgroundLighter: #27005ad8;
 @media (max-width: 800px){
     .h1{
         font-size: 40px;
-        padding-top: 50pxpx;
+        padding-top: 30px;
     }
 }
+//done managing the title
 
 @media (max-width:650px){
     .login{

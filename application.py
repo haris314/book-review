@@ -54,7 +54,7 @@ def register():
         return render_template("fail.html", detail="Passwords don't match", message="Registration failed")
     
     #Check if username already exists
-    existing_user = db.execute("SELECT * FROM _user where name= :name", {"name": name}).fetchone()
+    existing_user = db.execute("SELECT * FROM _user where name= LOWER(:name)", {"name": name}).fetchone()
     if(existing_user != None):
         return render_template("fail.html", detail="The entered username already exists. Please try again with a different username", message="Registration failed")
 
@@ -63,7 +63,7 @@ def register():
         return render_template("fail.html", detail="The username or password can't be more than 20 characters", message="Registration failed") 
     
     #Else, register
-    db.execute("INSERT INTO _user VALUES (:name, :password)", {"name":name, "password":password})
+    db.execute("INSERT INTO _user VALUES (LOWER(:name), :password)", {"name":name, "password":password})
     db.commit()
 
     return render_template("success_register.html")
@@ -84,7 +84,7 @@ def login():
     password = request.form.get('password')
 
     #Get the user's record from the database
-    user = db.execute("SELECT * FROM _user WHERE name=:name AND password=:password", {"name": name, "password":password}).fetchone()
+    user = db.execute("SELECT * FROM _user WHERE name=LOWER(:name) AND password=:password", {"name": name, "password":password}).fetchone()
 
     #If no record exists, given information is not valid. Hence login fails
     if(user is None):
@@ -92,7 +92,7 @@ def login():
 
     #Tell session that the user is logged in and also the username
     session["login"] = True
-    session["username"] = name
+    session["username"] = name.lower()
 
     return render_template("books.html")
 
@@ -144,7 +144,7 @@ def book_details(isbn):
 
         #If the user tried to submit a review without logging in
         #Give error
-        if(session["login"] == False or session["login"] == None):
+        if(session.get("login") == False or session.get("login") == None):
             return render_template("fail.html", message="Login required", detail="Please login before submitting a review")
 
         #Get the information required to push the review in the database
@@ -176,7 +176,7 @@ def book_details(isbn):
         return render_template("fail.html", message="404 Not Found", error="The requested ISBN does not exist in the database"), 404
 
     #Get reviews for the ISBN
-    reviews = db.execute("Select * FROM review WHERE isbn=:isbn", {"isbn": isbn})
+    reviews = db.execute("Select * FROM review WHERE isbn=:isbn ORDER BY number DESC", {"isbn": isbn})
     count = reviews.rowcount
     reviews = reviews.fetchall() 
 
