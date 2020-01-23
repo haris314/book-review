@@ -5,6 +5,7 @@ from flask import Flask, session, render_template, request, redirect, url_for, j
 from flask_session import Session
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
+from extraLogic import shouldBePreFormatted
 
 app = Flask(__name__)
 
@@ -151,6 +152,7 @@ def book_details(isbn):
         name = session["username"]
         rating = request.form.get("rating")
         review = request.form.get("review_given")
+        isPreFormatted = shouldBePreFormatted(review)
 
         #Don't allow the user to review if it's too short or empty
         if(len(review) < 3):
@@ -165,7 +167,7 @@ def book_details(isbn):
             db.commit()
         
         #Insert the new review
-        db.execute("INSERT INTO review (name, isbn, review, rating) VALUES (:name, :isbn, :review, :rating)", {"name": name, "isbn": isbn, "review": review, "rating": rating})
+        db.execute("INSERT INTO review (name, isbn, review, rating, ispreformatted) VALUES (:name, :isbn, :review, :rating, :isPreFormatted)", {"name": name, "isbn": isbn, "review": review, "rating": rating, "isPreFormatted": isPreFormatted})
         db.commit()
     
     #Get the book from the database

@@ -69,7 +69,11 @@
                         {% endfor %}
                         <br>
                         <span style="font-size: 30px">{{review.name}} wrote:</span>
-                        <p>{{review.review}}</p>
+                        {% if review.ispreformatted %}
+                            <pre>pre{{review.review}}</pre>
+                        {% else %}
+                            <p>notpre{{review.review}}</p>
+                        {% endif %}
                     </div>
                     
                 </div>
