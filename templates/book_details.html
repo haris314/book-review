@@ -70,9 +70,9 @@
                         <br>
                         <span style="font-size: 30px">{{review.name}} wrote:</span>
                         {% if review.ispreformatted %}
-                            <pre>pre{{review.review}}</pre>
+                            <pre>{{review.review}}</pre>
                         {% else %}
-                            <p>notpre{{review.review}}</p>
+                            <p>{{review.review}}</p>
                         {% endif %}
                     </div>
                     
