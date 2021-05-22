@@ -204,20 +204,37 @@ def book_details(isbn):
     elif(avg_rating - full_stars >= .20):
         half_star = True
 
+    ''' 
+    Goodreads API is not working anymore
+    So it has been mocked with dummy data
+    So that the website works fine
+    '''
     #Get data from Goodreads
-    res = requests.get("https://www.goodreads.com/book/review_counts.json", params={"key": api_key_goodreads, "isbns": isbn})
-    data = res.json()
-    gr_count = int(data["books"][0]["work_ratings_count"])
-    gr_avg_rating = float(data["books"][0]["average_rating"])
+    # print("Getting data from goodreads")
+    # res = requests.get("https://www.goodreads.com/book/review_counts.json", params={"key": api_key_goodreads, "isbns": isbn})
+    # print("Data: ", res)
+    # print("Converting to JSON")
+    # data = res.json()
+    # print("Jsonified: ", data)
+    # gr_count = int(data["books"][0]["work_ratings_count"])
+    # gr_avg_rating = float(data["books"][0]["average_rating"])
     
-    #Get how many stars to be printed by the html tempelate for Goodreads data
-    gr_full_stars = int(gr_avg_rating)
+    # #Get how many stars to be printed by the html tempelate for Goodreads data
+    # gr_full_stars = int(gr_avg_rating)
+    # gr_half_star = False
+    # if(gr_avg_rating - gr_full_stars >= .80):
+    #     gr_full_stars+=1
+    # elif(gr_avg_rating - gr_full_stars >= .20):
+    #     gr_half_star = True
+    gr_avg_rating = 3.5
+    gr_count = 54323
+    gr_full_stars =  int(gr_avg_rating)
     gr_half_star = False
     if(gr_avg_rating - gr_full_stars >= .80):
         gr_full_stars+=1
     elif(gr_avg_rating - gr_full_stars >= .20):
         gr_half_star = True
-    
+
     return render_template("book_details.html", book=book, reviews=reviews, avg_rating=avg_rating, full_stars=full_stars, half_star=half_star, count=count, gr_avg_rating=gr_avg_rating, gr_full_stars=gr_full_stars, gr_half_star=gr_half_star, gr_count=gr_count)
 
 
